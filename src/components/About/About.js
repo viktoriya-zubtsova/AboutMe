@@ -13,10 +13,25 @@ const octokit = new Octokit();
 class About extends React.Component {
   state = {
     isLoading: true,
-    repoList: [],
+    repoList: [
+    {
+      url: 'https://viktoriya-zubtsova.github.io/Axion/',
+      text: 'Адаптивная верстка сайта-лэндинга',
+      id: 1
+    }, 
+    { 
+      url: 'https://viktoriya-zubtsova.github.io/Bali/',
+      text: 'Адаптивная верстка одно-страничного сайта',
+      id: 2
+     },
+    {
+      url: 'https://viktoriya-zubtsova.github.io/Bug-Game/',
+      text: 'Браузерная игра, разработанная на JavaScript',
+      id: 3
+    }],
     error: false,
     repoPaginList: [],
-    paginLimit: 2
+    paginLimit: 3
   }
   componentDidMount() {
     octokit.users.getByUsername({
@@ -39,7 +54,6 @@ class About extends React.Component {
       username: 'viktoriya-zubtsova'
     }).then(({ data }) => {
       this.setState({
-        repoList: data,
         isLoading: false
       })
       this.setState({
@@ -75,41 +89,36 @@ class About extends React.Component {
           <div className={styles.user}>
             <img className={styles.userAvatar} src={this.state.userAvatar}/>
             <div className={styles.userInfo}>
-              <h3 className={styles.userTitle}>Виктория Зубцовa</h3>
+              <h2 className={styles.userTitle}>Виктория Зубцовa</h2>
               <p className={styles.userText}>{this.state.userBio}</p>
               <p className={styles.userText}>
                 <MailOutlineIcon className={styles.userIcon} /> wow55222@yandex.ru</p>
               <p className={styles.userText}>
                 <TelegramIcon className={styles.userIcon} /><WhatsAppIcon className={styles.userIcon} /> +79130822502</p>
               <p className={styles.userText}>
-                <InstagramIcon className={styles.userIcon} />
-                <a className={styles.link} href={'https://www.instagram.com/zy_vi_an'}> zy_vi_an</a></p>
-              <p className={styles.userText}>
                 <GitHubIcon className={styles.userIcon} />
                 <a className={styles.link} href={this.state.userUrl}> {this.state.userName}</a></p>
+              <p className={styles.userText}>
+                <InstagramIcon className={styles.userIcon} />
+                <a className={styles.link} href={'https://www.instagram.com/zy_vi_an'}> zy_vi_an</a></p>
             </div>
           </div>
-          <h2 className={styles.title}>Мои проекты:</h2>
-          <ul>
-            <li><a className={styles.projectLink} href='https://webheroschool.github.io/zubtsova-final-HTML-CSS/'>Axion</a></li>
-            <li><a className={styles.projectLink} href='https://viktoriya-zubtsova.github.io/Bali/'>Bali</a></li>
-            <li><a className={styles.projectLink} href='https://webheroschool.github.io/zubtsova-JS/'>Карты с багами оО</a></li>
-          </ul>
+          <div className={styles.projects}>
+           <h2 className={styles.title}>Знания, умения, навыки:</h2>
+          </div>
         </div>}
-        <h2 className={styles.title}>{ isLoading ? <LinearProgress color="primary" /> : 'Мои репозитории:'}</h2>
+        <h2 className={styles.title}>{ isLoading ? <LinearProgress /> : 'Мои проекты:'}</h2>
         {!isLoading && <div>
           <ol className={styles.list}>
             {this.state.repoPaginList.map(repo => (<li className={styles.listItem} key={repo.id}>
-              <a className={styles.projectLink} href={repo.html_url}>{repo.name}</a>
-              <p className={styles.text}>{repo.description} ({repo.language})</p>
-              <span className={styles.text}>обновлён: {new Date(repo.updated_at).toLocaleString()}</span>
+              <a className={styles.projectLink} href={repo.url}>{repo.url}</a>
+              <span className={styles.text}>{repo.text}</span>
             </li>))}
           </ol>
           <div className={styles.pagination}>
             <Pagination
               count={this.state.paginCount}
               variant="outlined"
-              color="primary"
               onChange={this.changePagin.bind(this)} />
           </div>
         </div>}

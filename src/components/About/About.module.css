@@ -1,21 +1,17 @@
 .user{
-  border: 1px solid #333;
-  border-radius: 5px;
-  background-color: #E7EAF6;
+  display: inline-block;
+  height: 100%;
 }
 .userAvatar{
-  width: 150px;
+  width: 300px;
   border-radius: 50%;
-  display: inline-block;
-  margin: 20px 20px;
+  position: absolute;
+  margin: -150px 20px 20px 20px;
 }
 .userInfo{
-  text-align: right;
-  padding-right: 20px;
   color: #333;
-  display: inline-block;
-  width: 230px;
-  vertical-align: top;
+  width: 300px;
+  margin: 180px 30px 30px 30px;
 }
 .userTitle{
   color: #333;

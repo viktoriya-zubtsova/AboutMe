@@ -7,9 +7,6 @@ body{
   font-family: Helvetica;
   padding-top: 25vh;
 }
-.content{
-  opacity: 0.5;
-}
 .link{
   text-decoration: none;
 }
