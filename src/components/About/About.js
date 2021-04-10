@@ -8,40 +8,49 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import Pagination from '@material-ui/lab/Pagination';
 import { Octokit } from '@octokit/rest';
 import styles from './About.module.css';
+import Bali from './bali.jpg';
+import Bag from './bag.jpg';
+import Axion from './axion.jpg';
 
 const octokit = new Octokit();
 class About extends React.Component {
   state = {
     isLoading: true,
-    repoList: [
+    projectsList: [
     {
       url: 'https://viktoriya-zubtsova.github.io/Axion/',
-      text: 'Адаптивная верстка сайта-лэндинга',
+      text: 'Axion | Адаптивная верстка сайта-лэндинга',
+      img: Axion,
       id: 1
-    }, 
-    { 
+    },
+    {
       url: 'https://viktoriya-zubtsova.github.io/Bali/',
-      text: 'Адаптивная верстка одно-страничного сайта',
+      text: 'Bali | Адаптивная верстка одно-страничного сайта',
+      img: Bali,
       id: 2
      },
     {
       url: 'https://viktoriya-zubtsova.github.io/Bug-Game/',
-      text: 'Браузерная игра, разработанная на JavaScript',
+      text: 'Bag-Game | Браузерная игра, разработанная на JavaScript',
+      img: Bag,
       id: 3
     }],
     error: false,
-    repoPaginList: [],
-    paginLimit: 3
+    paginList: [],
+    paginLimit: 2
   }
   componentDidMount() {
     octokit.users.getByUsername({
       username: 'viktoriya-zubtsova'
     }).then(( json ) => {
         this.setState({
+          isLoading: false,
           userName: json.data.login,
           userAvatar: json.data.avatar_url,
           userUrl: json.data.html_url,
-          userBio: json.data.bio
+          userBio: json.data.bio,
+          paginList: this.state.projectsList.slice(0, this.state.paginLimit),
+          paginCount: Math.ceil(this.state.projectsList.length / this.state.paginLimit)
       });
     }).catch(error => {
       this.setState({
@@ -50,33 +59,16 @@ class About extends React.Component {
         textError: 'Что-то пошло не так...'
     })
   });
-    octokit.repos.listForUser({
-      username: 'viktoriya-zubtsova'
-    }).then(({ data }) => {
-      this.setState({
-        isLoading: false
-      })
-      this.setState({
-        repoPaginList: this.state.repoList.slice(0, this.state.paginLimit),
-        paginCount: Math.ceil(this.state.repoList.length / this.state.paginLimit)
-      });
-      }).catch(error => {
-        this.setState({
-          error: true,
-          isLoading: false,
-          textError: 'Что-то пошло не так...'
-      })
-    });
   }
   changePagin(event, value) {
         this.setState({
           currentPage: value,
-          repoPaginList: this.state.repoList.slice((value - 1) * this.state.paginLimit, ((value - 1) * this.state.paginLimit + this.state.paginLimit))
+          paginList: this.state.projectsList.slice((value - 1) * this.state.paginLimit, ((value - 1) * this.state.paginLimit + this.state.paginLimit))
         });
 }
 
   render() {
-    const { isLoading, repoPaginList, error, paginCount} = this.state;
+    const { isLoading, paginList, error, paginCount} = this.state;
 
     if (this.state.error) {
 			return (<div>
@@ -97,24 +89,35 @@ class About extends React.Component {
                 <TelegramIcon className={styles.userIcon} /><WhatsAppIcon className={styles.userIcon} /> +79130822502</p>
               <p className={styles.userText}>
                 <GitHubIcon className={styles.userIcon} />
-                <a className={styles.link} href={this.state.userUrl}> {this.state.userName}</a></p>
+                <a className={styles.userText} href={this.state.userUrl}> {this.state.userName}</a></p>
               <p className={styles.userText}>
                 <InstagramIcon className={styles.userIcon} />
-                <a className={styles.link} href={'https://www.instagram.com/zy_vi_an'}> zy_vi_an</a></p>
+                <a className={styles.userText} href={'https://www.instagram.com/zy_vi_an'}> zy_vi_an</a></p>
             </div>
           </div>
           <div className={styles.projects}>
-           <h2 className={styles.title}>Знания, умения, навыки:</h2>
+            <h2 className={styles.title}>Знания, умения, навыки:</h2>
+            <ul className={styles.text}>
+              <li>Git</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Javascript</li>
+              <li>Адаптивная верстка</li>
+              <li>Блочная фиксированная / резиновая верстка</li>
+              <li>Реализация pixel perfect</li>
+              <li>Keyframe анимации</li>
+              <li>Подключение нестандартных шрифтов (@font-face, cufon, google web fonts)</li>
+            </ul>
           </div>
         </div>}
         <h2 className={styles.title}>{ isLoading ? <LinearProgress /> : 'Мои проекты:'}</h2>
         {!isLoading && <div>
-          <ol className={styles.list}>
-            {this.state.repoPaginList.map(repo => (<li className={styles.listItem} key={repo.id}>
-              <a className={styles.projectLink} href={repo.url}>{repo.url}</a>
-              <span className={styles.text}>{repo.text}</span>
-            </li>))}
-          </ol>
+          <div className={styles.projects}>
+            {this.state.paginList.map(repo => (<div className={styles.projectItem} key={repo.id}>
+              <img className={styles.projectImg} src={repo.img}></img>
+              <a className={styles.projectLink} href={repo.url}><br/>{repo.text}</a>
+            </div>))}
+          </div>
           <div className={styles.pagination}>
             <Pagination
               count={this.state.paginCount}

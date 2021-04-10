@@ -1,6 +1,5 @@
 .user{
   display: inline-block;
-  height: 100%;
 }
 .userAvatar{
   width: 300px;
@@ -21,6 +20,7 @@
   margin: 0 0 5px 0;
   font-size: 15px;
   position: relative;
+  color: #333;
 }
 .userIcon{
   width: 20px;
@@ -28,34 +28,28 @@
   position: relative;
   top: 3px;
 }
-.link{
-  color: #333;
-}
 .title{
   text-align: center;
   color: #333;
 }
 .projectLink{
-  color: #3F51B5;
-  font-size: 20px;
-  text-decoration: none;
+  color: #333;
+  font-size: 18px;
 }
-.text{
-  margin: 0;
-  padding: 5px 10px 0 0;
-  font-size: 14px;
+.projectImg{
+  width: 400px;
 }
-.list{
- list-style-type: none;
-}
-.listItem{
-  margin: 0 40px 10px 0;
-  border: 1px solid #333;
+.projectItem{
+  border: 1px solid #c3c3c3;
   border-radius: 5px;
-  padding: 10px 10px;
+  padding: 20px 20px;
+  display: inline-block;
+  width: 440px;
+  height: 340px;
+  text-align: center;
 }
-.listItem:hover{
-  background-color: #E7EAF6;
+.projectItem:hover{
+  background-color: #ebebeb;
 }
 .pagination{
   display: flex;
