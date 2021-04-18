@@ -37,7 +37,7 @@ class About extends React.Component {
     }],
     error: false,
     paginList: [],
-    paginLimit: 2
+    paginLimit: 3
   }
   componentDidMount() {
     octokit.users.getByUsername({
@@ -78,35 +78,37 @@ class About extends React.Component {
     return (
       <div>
         {!isLoading && <div>
-          <div className={styles.user}>
-            <img className={styles.userAvatar} src={this.state.userAvatar}/>
-            <div className={styles.userInfo}>
-              <h2 className={styles.userTitle}>Виктория Зубцовa</h2>
-              <p className={styles.userText}>{this.state.userBio}</p>
-              <p className={styles.userText}>
-                <MailOutlineIcon className={styles.userIcon} /> wow55222@yandex.ru</p>
-              <p className={styles.userText}>
-                <TelegramIcon className={styles.userIcon} /><WhatsAppIcon className={styles.userIcon} /> +79130822502</p>
-              <p className={styles.userText}>
-                <GitHubIcon className={styles.userIcon} />
-                <a className={styles.userText} href={this.state.userUrl}> {this.state.userName}</a></p>
-              <p className={styles.userText}>
-                <InstagramIcon className={styles.userIcon} />
-                <a className={styles.userText} href={'https://www.instagram.com/zy_vi_an'}> zy_vi_an</a></p>
+          <div className={styles.userBlock}>
+            <div className={styles.user}>
+              <img className={styles.userAvatar} src={this.state.userAvatar}/>
+              <div className={styles.userInfo}>
+                <h2 className={styles.userTitle}>Виктория Зубцовa</h2>
+                <p className={styles.userText}>{this.state.userBio}</p>
+                <p className={styles.userText}>
+                  <MailOutlineIcon className={styles.userIcon} /> wow5222@yandex.ru</p>
+                <p className={styles.userText}>
+                  <WhatsAppIcon className={styles.userIcon} />
+                  <a className={styles.userLink} href={'http://wa.me/79130822502'}> +79130822502</a></p>
+                <p className={styles.userText}>
+                  <GitHubIcon className={styles.userIcon} />
+                  <a className={styles.userLink} href={this.state.userUrl}> {this.state.userName}</a></p>
+              </div>
             </div>
-          </div>
-          <div className={styles.projects}>
-            <h2 className={styles.title}>Знания, умения, навыки:</h2>
-            <ul className={styles.text}>
-              <li>Git</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Javascript</li>
+            <ul className={styles.userDescription}>
+              <h3 className={styles.title}>Могу, умею, практикую:</h3>
+              <li>Работа с системой контроля версий GIT, GitHub</li>
+              <li>HTML5, CSS3, JavaScript</li>
+              <li>React, Material-UI</li>
               <li>Адаптивная верстка</li>
               <li>Блочная фиксированная / резиновая верстка</li>
-              <li>Реализация pixel perfect</li>
+            </ul>
+            <ul className={styles.userDescription}>
+              <li>Реализация pixel perfect,<br/>100% соответсвие макету</li>
               <li>Keyframe анимации</li>
-              <li>Подключение нестандартных шрифтов (@font-face, cufon, google web fonts)</li>
+              <li>Подключение нестандартных шрифтов<br/>(@font-face, cufon, google web fonts)</li>
+              <li>На связи с 7:00 до 18.00 MSK</li>
+              <li>Выполнение точно в установленный срок</li>
+              <li>Приступаю к заказу незамедлительно</li>
             </ul>
           </div>
         </div>}

@@ -1,52 +1,95 @@
+.userBlock{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
 .user{
   display: inline-block;
+  width: 18vw;
 }
 .userAvatar{
-  width: 300px;
+  width: 16vw;
   border-radius: 50%;
   position: absolute;
-  margin: -150px 20px 20px 20px;
+  margin-top: -8vw;
 }
 .userInfo{
   color: #333;
-  width: 300px;
-  margin: 180px 30px 30px 30px;
+  margin: 8.5vw 0 0 1vw;
 }
 .userTitle{
   color: #333;
   margin-bottom: 0px;
+  font-size: 1.3vw;
 }
 .userText{
-  margin: 0 0 5px 0;
-  font-size: 15px;
+  margin: 0 0 0.1vh 0;
+  font-size: 1vw;
   position: relative;
   color: #333;
 }
+.userLink{
+  font-size: 1vw;
+  color: #333;
+  text-decoration: none;
+  transition: 0.8s;
+}
+.userLink:hover{
+  text-decoration: underline;
+}
 .userIcon{
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   position: relative;
   top: 3px;
 }
 .title{
   text-align: center;
   color: #333;
+  font-size: 1.3vw;
+  margin: 14px 0 14px 0;
+}
+.userDescription{
+  display: inline-block;
+  font-size: 1.1vw;
+}
+.userBenefits{
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+.projects{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
 }
 .projectLink{
   color: #333;
-  font-size: 18px;
+  font-size: 1vw;
+  text-decoration: none;
+  transition: 0.8s;
+}
+.projectLink:hover{
+  text-decoration: underline;
 }
 .projectImg{
-  width: 400px;
+  max-width: 18vw;
+  transition: 0.8s;
+}
+.projectImg:hover{
+  transform: scale(1.01);
 }
 .projectItem{
   border: 1px solid #c3c3c3;
-  border-radius: 5px;
-  padding: 20px 20px;
+  border-radius: 10px;
+  padding: 10px 10px;
   display: inline-block;
-  width: 440px;
-  height: 340px;
   text-align: center;
+  max-width: 19vw;
+  transition: 0.8s;
 }
 .projectItem:hover{
   background-color: #ebebeb;
@@ -54,5 +97,8 @@
 .pagination{
   display: flex;
   justify-content: center;
-  padding-bottom: 18px;
+  padding: 14px 0 14px 0;
+}
+@media (max-width: 999px) {
+  
 }

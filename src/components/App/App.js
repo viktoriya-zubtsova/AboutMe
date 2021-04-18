@@ -15,6 +15,7 @@ const App = () =>
             <meta property="og:image:width" content="450"/>
             <meta property="og:image:height" content="323"/>
         </MetaTags>
+        <h1 className={styles.mainTitle}>Верстка сайтов | Frontend Web-разработка</h1>
         <Card className={styles.content}>
           <About />
         </Card>
