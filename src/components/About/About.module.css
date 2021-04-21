@@ -1,6 +1,4 @@
 .userBlock{
-  display: flex;
-  justify-content: space-between;
   width: 95%;
   margin: auto;
 }
@@ -21,16 +19,16 @@
 .userTitle{
   color: #333;
   margin-bottom: 0px;
-  font-size: 1.3vw;
+  font-size: 24px;
 }
 .userText{
   margin: 0 0 0.1vh 0;
-  font-size: 1vw;
+  font-size: 18px;
   position: relative;
   color: #333;
 }
 .userLink{
-  font-size: 1vw;
+  font-size: 18px;
   color: #333;
   text-decoration: none;
   transition: 0.8s;
@@ -39,25 +37,20 @@
   text-decoration: underline;
 }
 .userIcon{
-  width: 18px;
-  height: 18px;
   position: relative;
-  top: 3px;
+  top: 6px;
 }
 .title{
   text-align: center;
   color: #333;
-  font-size: 1.3vw;
+  font-size: 24px;
   margin: 14px 0 14px 0;
 }
 .userDescription{
   display: inline-block;
-  font-size: 1.1vw;
-}
-.userBenefits{
-  text-align: center;
-  list-style-type: none;
-  padding: 0;
+  font-size: 20px;
+  vertical-align: top;
+  padding-left: 10%;
 }
 .projects{
   width: 95%;
@@ -68,7 +61,7 @@
 }
 .projectLink{
   color: #333;
-  font-size: 1vw;
+  font-size: 18px;
   text-decoration: none;
   transition: 0.8s;
 }
@@ -76,7 +69,7 @@
   text-decoration: underline;
 }
 .projectImg{
-  max-width: 18vw;
+  max-width: 21vw;
   transition: 0.8s;
 }
 .projectImg:hover{
@@ -88,7 +81,7 @@
   padding: 10px 10px;
   display: inline-block;
   text-align: center;
-  max-width: 19vw;
+  max-width: 22vw;
   transition: 0.8s;
 }
 .projectItem:hover{
@@ -99,6 +92,39 @@
   justify-content: center;
   padding: 14px 0 14px 0;
 }
-@media (max-width: 999px) {
-  
+@media (max-width: 1367px) {
+  .userTitle, .title{
+    font-size: 22px;
+  }
+  .userText, .userLink, .projectLink{
+    font-size: 16px;
+  }
+  .userDescription{
+    font-size: 18px;
+  }
+}
+@media (max-width: 1192px) {
+  .userTitle, .title{
+    font-size: 18px;
+  }
+  .userText, .userLink, .projectLink{
+    font-size: 14px;
+  }
+  .userDescription{
+    font-size: 16px;
+  }
+}
+@media (max-width: 1012px) {
+  .user{
+    display: inline-block;
+    width: 100%;
+  }
+  .userAvatar{
+    width: 32vw;
+    margin-top: -10vw;
+  }
+  .userInfo{
+    margin: 0 0 9vw 0;
+    padding-left: 40vw;
+  }
 }

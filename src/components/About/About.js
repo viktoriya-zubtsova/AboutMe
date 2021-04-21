@@ -39,6 +39,7 @@ class About extends React.Component {
     paginList: [],
     paginLimit: 3
   }
+
   componentDidMount() {
     octokit.users.getByUsername({
       username: 'viktoriya-zubtsova'
@@ -60,6 +61,7 @@ class About extends React.Component {
     })
   });
   }
+
   changePagin(event, value) {
         this.setState({
           currentPage: value,
@@ -95,20 +97,14 @@ class About extends React.Component {
               </div>
             </div>
             <ul className={styles.userDescription}>
-              <h3 className={styles.title}>Могу, умею, практикую:</h3>
               <li>Работа с системой контроля версий GIT, GitHub</li>
               <li>HTML5, CSS3, JavaScript</li>
               <li>React, Material-UI</li>
               <li>Адаптивная верстка</li>
               <li>Блочная фиксированная / резиновая верстка</li>
-            </ul>
-            <ul className={styles.userDescription}>
-              <li>Реализация pixel perfect,<br/>100% соответсвие макету</li>
+              <li>Реализация pixel perfect, 100% соответсвие макету</li>
               <li>Keyframe анимации</li>
-              <li>Подключение нестандартных шрифтов<br/>(@font-face, cufon, google web fonts)</li>
-              <li>На связи с 7:00 до 18.00 MSK</li>
-              <li>Выполнение точно в установленный срок</li>
-              <li>Приступаю к заказу незамедлительно</li>
+              <li>Подключение нестандартных шрифтов (@font-face, cufon, google web fonts)</li>
             </ul>
           </div>
         </div>}
