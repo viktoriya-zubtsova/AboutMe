@@ -11,6 +11,7 @@ import styles from './About.module.css';
 import Bali from './bali.jpg';
 import Bag from './bag.jpg';
 import Axion from './axion.jpg';
+import TodoApp from './todo.JPG';
 
 const octokit = new Octokit();
 class About extends React.Component {
@@ -34,7 +35,13 @@ class About extends React.Component {
       text: 'Bag-Game | Браузерная игра, разработанная на JavaScript',
       img: Bag,
       id: 3
-    }],
+    },
+    {
+      url: 'https://todo-app-viktoriya-zubtsova.vercel.app/',
+      text: 'TodoApp | React-приложение, с применением элементов Material-UI',
+      img: TodoApp,
+      id: 4
+     }],
     error: false,
     paginList: [],
     paginLimit: 3

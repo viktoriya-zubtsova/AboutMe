@@ -70,10 +70,6 @@
 }
 .projectImg{
   max-width: 21vw;
-  transition: 0.8s;
-}
-.projectImg:hover{
-  transform: scale(1.01);
 }
 .projectItem{
   border: 1px solid #c3c3c3;
@@ -124,7 +120,28 @@
     margin-top: -10vw;
   }
   .userInfo{
+    text-align: right;
     margin: 0 0 9vw 0;
-    padding-left: 40vw;
+  }
+}
+@media (max-width: 530px) {
+  .userDescription{
+    margin-bottom: 0;
+  }
+  .projects{
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectItem{
+    margin-bottom: 10px;
+    max-width: 78vw;
+    width: 78vw;
+  }
+  .projectItem:last-child{
+    margin-bottom: 0;
+  }
+  .projectImg{
+    max-width: 50vw;
+    width: 50vw;
   }
 }
