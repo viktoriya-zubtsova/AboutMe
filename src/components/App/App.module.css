@@ -1,33 +1,200 @@
-body{
-  background: #333;
+body {
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
 }
 .wrap {
   margin: auto;
-  width: 90%;
-  font-family: Helvetica;
-  padding-top: 7vh;
+  width: 65%;
+  font-family: Montserrat;
 }
-.mainTitle{
-  text-align: center;
-  color: #fff;
-  font-size: 2.2vw;
-  padding-left: 10vw;
+header {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 47px;
 }
-@media (max-width: 1012px) {
-  .mainTitle{
-    text-align: right;
-    font-size: 2.5vw;
+.logo,.menu {
+  display: inline-block;
+}
+.logo {
+  width: 75px;
+  height: 32px;
+  background: no-repeat url('./logo.svg');
+}
+.menuItem {
+  font: 500 17px/18px Montserrat, arial, helvetica, sans-serif;
+  color: #adad89;
+  text-decoration: none;
+  margin-right: 70px;
+}
+.user {
+  margin-bottom: 100px;
+}
+.userAvatar, .userTitle {
+  display: inline-block;
+}
+.userAvatar {
+  width: 225px;
+  height: 225px;
+}
+.userTitle {
+  font: 700 90px/93px Montserrat, arial, helvetica, sans-serif;
+  color: #83838e;
+  padding-left: 68px;
+  margin-bottom: 62px;
+}
+.userTitle2 {
+  color: #ffc700;
+}
+.userInfo {
+  font: 400 33px/41px Montserrat, arial, helvetica, sans-serif;
+  margin: 0 0 24px 0;
+}
+.userBio {
+  font-weight: 500;
+  color: #0094ff;
+}
+.userText {
+  font: 400 23px/44px Montserrat, arial, helvetica, sans-serif;
+  margin: 0 0 4px 0;
+}
+.userLink {
+  font-weight: 500;
+  color: #0094ff;
+  text-decoration: none;
+  transition: 1s;
+}
+.userLink:hover {
+  color: #ffc700;
+}
+.userIcon {
+  position: relative;
+  top: 5px;
+}
+@keyframes move {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
-@media (max-width: 730px) {
-  .mainTitle{
-    text-align: center;
-    font-size: 3.3vw;
-    padding: 0;
+.arrow {
+  width: 55px;
+  height: 30px;
+  background: no-repeat url('./arrow.svg');
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  margin-bottom: 110px;
+}
+.repos {
+  display: inline-block;
+  width: 42%;
+  vertical-align: top;
+}
+.title {
+  font: 600 33px/40px Montserrat, arial, helvetica, sans-serif;
+  color: #0094ff;
+  margin-bottom: 10px;
+}
+.repos > p {
+  font: 400 33px/40px Montserrat, arial, helvetica, sans-serif;
+  margin-top: 0;
+}
+.list {
+  display: inline-block;
+  width: 42%;
+  min-height: 524px;
+}
+.list > ol {
+  list-style-type: none;
+  padding: 5px 0 0 110px;
+}
+.list > ol > li {
+  margin-bottom: 30px;
+}
+.listLink {
+  font: 600 23px/28px Montserrat, arial, helvetica, sans-serif;
+  color: #83838e;
+  text-decoration: none;
+  transition: 1s;
+}
+.listLink:hover{
+  color: #ffc700;
+}
+.listText {
+  font: 400 16px/20px Montserrat, arial, helvetica, sans-serif;
+  color: #83838e;
+  margin: 0 0 16px 0;
+}
+.repoLanguageIcon {
+  width: 16px;
+  height: 16px;
+  background-color: #696969;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+.repolanguage-html {
+  background-color: #e34c26;
+}
+.repolanguage-css {
+  background-color: #0094ff;
+}
+.repolanguage-javascript {
+  background-color: #ffc700;
+}
+.repolangage-typescript {
+  background-color: #2b7489;
+}
+.repoLanguageIcon + p {
+  padding: 0 14px 0 4px;
+  color: #83838e;
+  display: inline-block;
+  margin: 0;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.cooperation {
+  margin-bottom: 194px;
+}
+.cooperation > p {
+  font: 400 33px/40px Montserrat, arial, helvetica, sans-serif;
+  margin: 0 0 24px 0;
+}
+.cooperationLink {
+  display: block;
+  font: 400 33px/40px Montserrat, arial, helvetica, sans-serif;
+  color: #0094ff;
+  transition: 1s;
+  padding-top: 44px;
+}
+.cooperationLink:hover {
+  color: #ffc700;
+}
+@media (max-width: 1900px) {
+  .wrap {
+    width: 77%;
   }
 }
-@media (max-width: 530px) {
-  .mainTitle{
-    font-size: 3.8vw;
+@media (max-width: 1600px) {
+  .wrap {
+    width: 86%;
+  }
+}
+@media (max-width: 1200px) {
+  .list {
+    width: 51%;
   }
 }
