@@ -79,11 +79,20 @@ class App extends React.Component {
         {isLoading ? <LinearProgress /> : <div>
           <header  id={'about'}>
             <div className={styles.logo}></div>
+            <input className={styles.menuToggle} id={'menuToggle'} type={'checkbox'} />
+            <label className={styles.menuBtn} for={'menuToggle'}>
+              <span></span>
+            </label>
             <nav className={styles.menu}>
-              <a className={styles.menuItem} href={"#works"}>Works</a>
-              <a className={styles.menuItem} href={"#skills"}>Skills</a>
-              <a className={styles.menuItem} href={"#repos"}>Git repositories</a>
+              <a className={styles.menuItem} href={'#works'}>Works</a>
+              <a className={styles.menuItem} href={'#skills'}>Skills</a>
+              <a className={styles.menuItem} href={'#repos'}>Git repositories</a>
+              <p className={styles.menuContacts}>Contact me<br/>
+                <a href={'mailto:wow5222@yandex.ru'}> wow5222@yandex.ru </a><br/>
+                <a href={'tel:+79130822502'}>+7 (913) 082-25-02</a>
+              </p>
             </nav>
+
           </header>
           <div className={styles.user}>
             <img className={styles.userAvatar} src={this.state.userAvatar}/>
@@ -92,10 +101,15 @@ class App extends React.Component {
               из Краснодара, Россия<br/>Я могу помочь вам создать ваш следующий проект.</p>
             <p className={styles.userText}>Делаю верстку по макету, внесение правок в разделы/стили, доработку сайта<br/>
               Есть проект, который вы хотели бы обсудить?<br/>
-              Давайте пообщаемся <MailOutlineIcon className={styles.userIcon} /><a className={styles.userLink} href={'mailto:wow5222@yandex.ru'}> wow5222@yandex.ru </a><WhatsAppIcon className={styles.userIcon} />
-              <a className={styles.userLink} href={'http://wa.me/79130822502'}>WhatsApp</a><TelegramIcon className={styles.userIcon} />
-              <a className={styles.userLink} href={'http://t.me/zy_vi_an'}>Telegram</a><br/>
-              или позвоните мне <a className={styles.userLink} href={'tel:+79130822502'}>+7 (913) 082-25-02</a></p>
+              Давайте пообщаемся<span>:<br/></span>
+              <MailOutlineIcon className={styles.userIcon} />
+              <a className={styles.userLink} href={'mailto:wow5222@yandex.ru'}> wow5222@yandex.ru </a><span><br/></span>
+              <WhatsAppIcon className={styles.userIcon} />
+              <a className={styles.userLink} href={'http://wa.me/79130822502'}> WhatsApp</a>
+              <TelegramIcon className={styles.userIcon} />
+              <a className={styles.userLink} href={'http://t.me/zy_vi_an'}> Telegram</a><br/>
+              или позвоните мне<span>:<br/></span>
+              <a className={styles.userLink} href={'tel:+79130822502'}> +7 (913) 082-25-02</a></p>
           </div>
           <div className={styles.arrow}></div>
         </div>}
