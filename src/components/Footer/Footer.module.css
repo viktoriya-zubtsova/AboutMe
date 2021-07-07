@@ -101,6 +101,9 @@
     margin: 4px 0 12px 0;
     width: auto;
   }
+  .footerMenu {
+    text-align: right;
+  }
   .footerMenu > p, .footerContacts > p {
     font: 500 15px/19px Montserrat, arial, helvetica, sans-serif;
   }

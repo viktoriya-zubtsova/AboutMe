@@ -80,6 +80,7 @@ header {
 .userIcon {
   position: relative;
   top: 5px;
+  z-index: -1;
 }
 @keyframes move {
   0% {
